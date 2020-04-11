@@ -1,1 +1,1 @@
-web: app.py flask run 0.0.0.0:5000
+web: gunicorn src.app:app --log-file=-
