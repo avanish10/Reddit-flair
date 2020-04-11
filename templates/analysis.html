@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <title>FlairifyMe</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <style>
+    body{
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    h1 { 
+      display: block;
+      font-size: 4.5em;
+      margin-top: 0.67em;
+      margin-bottom: 0.67em;
+      margin-left: 0;
+      margin-right: 0;
+      font-family: 'arial';
+      color: #FFFFFF;
+    }
+    h2 { 
+      display: block;
+      font-size: 2em;
+      margin-top: 0.67em;
+      margin-bottom: 0.67em;
+      margin-left: 0;
+      margin-right: 0;
+      font-family: 'arial';
+      color: #FFFFFF;
+    }
+    h4 a{ 
+      display: block;
+      margin-top: 0.67em;
+      margin-bottom: 0.67em;
+      margin-left: 0;
+      margin-right: 0;
+      font-family: 'arial';
+      color: #FFFFFF;
+    }
+    .navbar{
+      background-color: #FF7171;
+      top: 0;
+      width: 100%;
+      min-height: 200px;
+    }
+  
+    .footer{
+        width: 100%;
+        position: fixed;        
+        background: #808080;
+        padding: 10px 0;
+        color: #fff;
+        bottom: 0;
+      }
+      .footer a {
+        float: right;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 2px 40px;
+        text-decoration: none;
+        }
+      
+  </style>
+  </head>
+  <body>
+    <body>
+    <div class='navbar'>
+      <div class='container'>
+        <h4 align='right'><a href="https://flairify-me.herokuapp.com/">Home</a></h4>
+
+      <h1 align='center'>FlairifyMe</h1>
+      <p>
+      <h2 align='center'>Reddit Flair Detector</h2>
+      </div>
+    </div>
+    <div class='container'>
+      <h3>Flair Analysis based on Comments</h3>
+      <br>
+    <canvas id='postCommentAnalysis' width='100' height='50'></canvas>
+    <br>
+    <br>
+    <h3>Flair Analysis based on Upvotes</h3>
+    <br>
+    <canvas id='postUpvotesAnalysis' width="100" height="50"></canvas>
+    <br>
+    <br>
+    <h3>Temporal Analysis of Posts</h3>
+    <canvas id='temporalAnalysis' width="100" height="50"></canvas>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="footer">
+          <div class="container">Developed by: Bhavya Chopra
+          <a href="https://github.com/BhavyaC16/FlairifyMe" align="right">View Project on GitHub</a>
+          </div>        
+      </div>
+   
+</body>
+</html>
+

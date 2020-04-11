@@ -1,0 +1,17 @@
+Flask==1.1.2
+gunicorn==20.0.4
+urllib3==1.24.1
+pymongo==3.9.0
+matplotlib==3.2.0
+nltk==3.4.5
+numpy==1.18.2
+pandas==1.0.3
+praw==6.5.1
+prawcore==1.0.1
+scikit-learn==0.22.2
+scipy==1.4.1
+pickleshare==0.7.5
+beautifulsoup4==4.7.1
+bs4==0.0.1
+requests==2.21.0
+lxml==4.3.2

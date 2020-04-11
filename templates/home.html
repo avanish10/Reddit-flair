@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>FlairifyMe</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+	<style>
+		body{
+			padding-top: 0px;
+			padding-bottom: 0px;
+		}
+		h1 { 
+		  display: block;
+		  font-size: 4.5em;
+		  margin-top: 0.67em;
+		  margin-bottom: 0.67em;
+		  margin-left: 0;
+		  margin-right: 0;
+		  font-family: 'arial';
+		  color: #FFFFFF;
+		}
+		h4 a{ 
+      display: block;
+      margin-top: 0.67em;
+      margin-bottom: 0.67em;
+      margin-left: 0;
+      margin-right: 0;
+      font-family: 'arial';
+      color: #FFFFFF;
+    }
+		h2 { 
+		  display: block;
+		  font-size: 2em;
+		  margin-top: 0.67em;
+		  margin-bottom: 0.67em;
+		  margin-left: 0;
+		  margin-right: 0;
+		  font-family: 'arial';
+		  color: #FFFFFF;
+		}
+		.navbar{
+			background-color: #FF0000;
+			top: 0;
+			width: 100%;
+			min-height: 200px;
+		}
+	
+		.footer{
+        width: 100%;
+        position: fixed;        
+        background: #808080;
+        padding: 10px 0;
+        color: #fff;
+        bottom: 0;
+    	}
+    	.footer a {
+        float: right;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 2px 40px;
+        text-decoration: none;
+      	}
+    	input[type=url]{
+    		width:70%;
+    	}
+	</style>
+	</head>
+
+	<body  style='background-color:#696969'>
+		<div class='navbar'>
+			<div class='container'>
+			<h1 align='center'>Flair Detector</h1>
+			<p>
+			<h2 align='center'>Reddit Flair Detector</h2>
+			</div>
+		</div>
+		<div class='container'>
+			<br>
+			<br>
+			<br>
+			<h3>Enter a Post URL from r/India:</h3>
+			<form action="/flairDetect" method="post">
+				<input type="url" name="redditpost">
+				<input type="submit">
+			</form>
+			<br>
+			<br>
+			<h4> Predicted Flair: </h4>
+			<h3 align='center'>{{ predicted_flair }}</h3>
+			<br>
+		</div>
+		<div class="footer">
+        	<div class="container">Developed by: Avanish Singhal
+        	<a href="https://github.com/avanish10" align="right">View Project on GitHub</a>
+        	</div>        
+    	</div>
+	</body>
+</html>

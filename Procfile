@@ -1,0 +1,1 @@
+web: app.py flask run 0.0.0.0:5000
