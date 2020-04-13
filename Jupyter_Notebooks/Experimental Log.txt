@@ -1,0 +1,107 @@
+Aim:
+To Build a Classifier
+Due to following reasons I think Naive Bayes is a good idea:
+I thought first that Naive bayes is good text classifier because it made decision based on probability. Thats why I have decided to use Naive Bayes.Moreover Naive Bayes has feature of Multibinomial which allows this algorithm to follow the multinomial distribution.
+Implementation of  Naive Bayes:
+def nb_classifier(X_train, X_test, Y_train, Y_test):
+
+    from sklearn.naive_bayes import MultinomialNB
+    from sklearn.pipeline import Pipeline
+    from sklearn.feature_extraction.text import TfidfTransformer
+
+    nb = Pipeline([('vect', CountVectorizer()),
+                   ('tfidf', TfidfTransformer()),
+                   ('clf', MultinomialNB()),
+                  ])
+    nb.fit(X_train, Y_train)
+
+    from sklearn.metrics import classification_report
+    y_pred = nb.predict(X_test)
+
+    print('accuracy %s' % accuracy_score(y_pred, Y_test))
+    print(classification_report(Y_test, y_pred))
+
+Results of Naive Bayes Classifier:
+accuracy 0.5170068027210885
+                    precision    recall  f1-score   support
+
+          AskIndia       0.00      0.00      0.00        16
+  Business/Finance       0.00      0.00      0.00         2
+       CAA-NRC-NPR       0.00      0.00      0.00         1
+       Coronavirus       0.52      1.00      0.68        76
+              Food       0.00      0.00      0.00         1
+     Non-Political       0.00      0.00      0.00        25
+       Photography       0.00      0.00      0.00         1
+    Policy/Economy       0.00      0.00      0.00         3
+          Politics       0.00      0.00      0.00        18
+Science/Technology       0.00      0.00      0.00         3
+        Unverified       0.00      0.00      0.00         1
+
+         micro avg       0.52      0.52      0.52       147
+         macro avg       0.05      0.09      0.06       147
+      weighted avg       0.27      0.52      0.35       147
+      
+Naive Bayes Classifier is not fruitful because:
+Naive Bayes fails because it is not that efficient on the long training cases. Most of the time it is used with short documents and #### less training cases.Moreover it treats the the features independent of class.
+Changes I made for better results:
+I tried to change the parameters available in Naive Bayes as the most important role that payed was played by parameters. And #### try new models too for example I have used SVM classifier and it is giving better results than Naive Bayes. 
+Implementation of SVM:
+
+def linear_svm(X_train, X_test, y_train, y_test):
+
+    from sklearn.linear_model import SGDClassifier
+    from sklearn.pipeline import Pipeline
+    from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer, TfidfTransformer
+    from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+    import matplotlib.pyplot as plt
+
+
+    sgd = Pipeline([('vect', TfidfVectorizer()),
+                    ('tfidf', TfidfTransformer()),
+                    ('clf', SGDClassifier(loss='hinge', penalty='l2',alpha=1e-3, random_state=1, max_iter=5, tol=None)),
+                   ])
+    sgd.fit(X_train, Y_train)
+
+
+
+    y_pred = sgd.predict(X_test)
+
+    print('accuracy %s' % accuracy_score(y_pred, Y_test))
+    print(classification_report(Y_test, y_pred))
+
+    #confusion matrix between actual and predicted value
+    from sklearn.metrics import confusion_matrix
+    conf_mat = confusion_matrix(Y_test, y_pred)
+    fig, ax = plt.subplots(figsize=(10,10))
+
+
+    df.groupby('flair').title.count().plot.bar(ylim=0)
+    plt.show()
+
+
+    import seaborn as sns
+    sns.heatmap(conf_mat, annot=True, fmt='d')
+    plt.ylabel('Actual')
+    plt.xlabel('Predicted')
+    plt.show()
+It works becuase:
+In SVM vs Naive Bayes, the SVM is more preferable over Naive Bayes because SVM has option of kernels.
+Results of Linear Support Vector Machine
+accuracy 0.5986394557823129
+                    precision    recall  f1-score   support
+
+          AskIndia       0.45      0.56      0.50        16
+  Business/Finance       0.00      0.00      0.00         2
+       CAA-NRC-NPR       0.00      0.00      0.00         1
+       Coronavirus       0.68      0.89      0.77        76
+              Food       0.00      0.00      0.00         1
+     Non-Political       0.50      0.16      0.24        25
+       Photography       0.00      0.00      0.00         1
+    Policy/Economy       0.00      0.00      0.00         3
+          Politics       0.39      0.39      0.39        18
+Science/Technology       0.00      0.00      0.00         3
+        Unverified       0.00      0.00      0.00         1
+
+         micro avg       0.60      0.60      0.60       147
+         macro avg       0.18      0.18      0.17       147
+      weighted avg       0.53      0.60      0.54       147
