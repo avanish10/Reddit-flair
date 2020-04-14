@@ -93,9 +93,6 @@ After going through the flair-wise and overall prediction accuracies, the model 
 ### Flair Prediction
 The saved model is loaded for predicting the flair once the post features (title, body and comments) have been cleaned using NLTK. The returned result is displayed on the web-application.
 
-### API for querying FlairifyMe
-A developer API using flask has been implemented, which returns a JSON containing the predicted flair of the Reddit Post queried by the user.
-
 Can be accessed by querying: 
 ```
 https://rflair.herokuapp.com/automated_testing?filename=%s" %filename
