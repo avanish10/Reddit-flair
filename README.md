@@ -58,7 +58,7 @@ The saved model is loaded for predicting the flair once the post features (title
 
 * For automated post request, it can be done with: 
 ```
-https://rflair.herokuapp.com/automated_testing?filename=%s" %filename
+https://rflair.herokuapp.com/automated_testing?filename=<enter_filename with extension>
 ```
 
 * Future plans:
