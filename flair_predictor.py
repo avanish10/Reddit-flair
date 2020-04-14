@@ -23,7 +23,7 @@ def clean_text(text):
 def detect_flair(u):
     reddit = praw.Reddit(client_id='69D-_faFMb67Ww', client_secret='NicR7Ux1OFwOTuN1QDn49wq6itM',username='singhalavanish',password='cookies12', user_agent='singhalavanish')
     flair_dict={0:'Political',1:'Non-Political',2:'[R]eddiquette',3:'AskIndia',4:'Science/Technology',5:'Policy/Economy',6:'Finance/Business',7:'Sports',8:'Food',9:'Photography',10:'AMA',11:'Coronavirus'}
-    loaded_model = pickle.load(open('./Model/finaliz_model.sav', 'rb'))
+    loaded_model = pickle.load(open('./Model/finalized_model.sav', 'rb'))
     submission = reddit.submission(url=u)
 
     data = {}
