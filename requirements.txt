@@ -14,4 +14,4 @@ pickleshare==0.7.5
 beautifulsoup4==4.7.1
 bs4==0.0.1
 requests==2.21.0
-lxml==4.3.2
+lxml==4.9.1
